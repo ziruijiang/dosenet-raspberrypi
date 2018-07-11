@@ -64,7 +64,7 @@ class air_quality_DAQ(object):
             reader = csv.reader(f)
             for row in reader:
                 id_info.append(row)
-        filename =  "/home/pi/data/"+"_".join(row)+"_air_quality"+file_time+self.location+self.period+".csv"
+        filename =  "/home/pi/data/"+"_".join(row)+"_air_quality"+file_time+"_"+self.location+"_Period_"+self.period+".csv"
         f = open(filename, "ab+")
         results = csv.writer(open(filename, "ab+"), delimiter = ",")
         metadata = ["Time", "0.3 um", "0.5 um", "1.0 um", "2.5 um", "5.0 um", "10 um", "PM 1.0", "PM 2.5", "PM 10"]

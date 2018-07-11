@@ -50,7 +50,7 @@ class weather_DAQ(object):
             reader = csv.reader(f)
             for row in reader:
                 id_info.append(row)
-        filename = "/home/pi/data/"+"_".join(row)+"_weathe"+file_time+self.location+self.period+".csv"
+        filename = "/home/pi/data/"+"_".join(row)+"_weather"+file_time+"_"+self.location+"_Period_"+self.period+".csv"
         results=csv.writer(open(filename, "ab+"), delimiter = ",")
         metadata=["Time", "Temp (C)","Temp SD","Pressure (hPa)", "Pressure SD","Humidity (%)","Humidity SD"]
         results.writerow(metadata)
