@@ -269,6 +269,6 @@ period_text.pack(side=Tkinter.LEFT, padx = 3)
 period_option.pack(side=Tkinter.LEFT, anchor= Tkinter.E, padx = 3)
 location_text.pack(side=Tkinter.LEFT, padx = 3)
 location_option.pack(side=Tkinter.LEFT,anchor= Tkinter.E, padx = 3)
-RecordButton.pack(pady = 6)
+RecordButton.pack(pady = 6,side=Tkinter.BOTTOM)
     
 top.mainloop()
