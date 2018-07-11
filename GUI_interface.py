@@ -38,7 +38,7 @@ option3 = ['Inside','Outside','Other']
 option4 = [0,1,2,3,4,5,6,7,8]
 
 top = Tkinter.Tk()
-top.geometry("800x480")
+top.geometry("400x240")
 varAir = Tkinter.BooleanVar()
 vard3s = Tkinter.BooleanVar()
 varCO2 = Tkinter.BooleanVar()
@@ -255,7 +255,7 @@ maxdata_text = Label(top, text = "Data points on plot", font = "Times 16").grid(
 nmerge_text = Label(top, text = 'Integration seconds (s)', font = "Times 16").grid(row=5, column = 2)
 period_text = Label(top, text = 'Period', font = "Times 16").grid(row=6, column = 2)
 location_text = Label(top, text = 'Location', font = "Times 16").grid(row=7, column = 2)
-RecordButton = Tkinter.Button(top, text="Record Data", command = weather_test, font="Times 20").grid(row=6, column = 2)
+RecordButton = Tkinter.Button(top, text="Record Data", command = weather_test, font="Times 20").grid(row=8, column = 2)
  
 maxdata_option.grid(row=4, column = 3) 
 n_merge_option.grid(row=5, column = 3)
