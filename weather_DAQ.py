@@ -158,7 +158,7 @@ class weather_DAQ(object):
     
     def update_plot(self,plot_id,xdata,ydata,yerr,xlabel,ylable,title):
         plt.ion()
-        fig = plt.figure(plot_id)
+        fig = plt.figure(plot_id,figsize=(800, 480))
         plt.clf()
         ax=fig.add_subplot(111)
         plt.xlabel(xlabel)

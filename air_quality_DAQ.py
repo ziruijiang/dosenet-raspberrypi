@@ -211,7 +211,7 @@ class air_quality_DAQ(object):
         #print("Number of PM1 entries = {}".format(len(ydata1)))
         #print("\n\n\n")
         plt.ion()
-        fig = plt.figure(plot_id)
+        fig = plt.figure(plot_id,figsize=(800, 480))
         plt.clf()
 
         gs = GridSpec(6,2)
