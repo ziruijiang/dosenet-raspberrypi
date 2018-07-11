@@ -38,7 +38,7 @@ option3 = ['Inside','Outside','Other']
 option4 = [0,1,2,3,4,5,6,7,8]
 
 top = Tkinter.Tk()
-top.geometry("400x320")
+top.geometry("400x480")
 varAir = Tkinter.BooleanVar()
 vard3s = Tkinter.BooleanVar()
 varCO2 = Tkinter.BooleanVar()
@@ -240,10 +240,10 @@ def weather_test():
     make_run_gui() 
 
 
-AirButton = Tkinter.Checkbutton(top, text="Air Quality", variable=varAir, font="Times 20").grid(row=0, column = 2)    
-WeatherButton = Tkinter.Checkbutton(top, text='Weather Sensor', variable=varWeather, font="Times 20").grid(row=1, column = 2)
-CO2Button = Tkinter.Checkbutton(top, text="CO2 Sensor", variable=varCO2, font="Times 20").grid(row=2, column = 2)
-d3sButton = Tkinter.Checkbutton(top, text="D3S", variable=vard3s, font="Times 20").grid(row=3, column = 2)
+AirButton = Tkinter.Checkbutton(top, text="Air Quality", variable=varAir, font="Times 20").grid(row=0, column = 2.5,pady = 2)    
+WeatherButton = Tkinter.Checkbutton(top, text='Weather Sensor', variable=varWeather, font="Times 20").grid(row=1, column = 2.5,pady = 2)
+CO2Button = Tkinter.Checkbutton(top, text="CO2 Sensor", variable=varCO2, font="Times 20").grid(row=2, column = 2.5,pady = 2)
+d3sButton = Tkinter.Checkbutton(top, text="D3S", variable=vard3s, font="Times 20").grid(row=3, column = 2.5,pady = 2)
 # maxdata = Entry(top)
 # n_merge = Entry(top)
 maxdata_option = Tkinter.OptionMenu(top, maxdata, *option1)
@@ -251,11 +251,11 @@ n_merge_option = Tkinter.OptionMenu(top, n_merge, *option2)
 period_option = Tkinter.OptionMenu(top, period, *option4)
 location_option = Tkinter.OptionMenu(top, location, *option3)
 
-maxdata_text = Label(top, text = "Data points on plot", font = "Times 16").grid(row=4, column = 2)
-nmerge_text = Label(top, text = 'Integration seconds (s)', font = "Times 16").grid(row=5, column = 2)
-period_text = Label(top, text = 'Period', font = "Times 16").grid(row=6, column = 2)
-location_text = Label(top, text = 'Location', font = "Times 16").grid(row=7, column = 2)
-RecordButton = Tkinter.Button(top, text="Record Data", command = weather_test, font="Times 20").grid(row=8, column = 2)
+maxdata_text = Label(top, text = "Data points on plot", font = "Times 16").grid(row=4, column = 2,pady = 2)
+nmerge_text = Label(top, text = 'Integration seconds (s)', font = "Times 16").grid(row=5, column = 2,pady = 2)
+period_text = Label(top, text = 'Period', font = "Times 16").grid(row=6, column = 2,pady = 2)
+location_text = Label(top, text = 'Location', font = "Times 16").grid(row=7, column = 2,pady = 2)
+RecordButton = Tkinter.Button(top, text="Record Data", command = weather_test, font="Times 20").grid(row=8, column = 2.5)
  
 maxdata_option.grid(row=4, column = 3) 
 n_merge_option.grid(row=5, column = 3)
