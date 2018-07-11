@@ -15,7 +15,7 @@ MOSI = 24
 CS   = 25
 
 class adc_DAQ(object):
-    def __init__(self, maxdata, n_merge):
+    def __init__(self, maxdata, n_merge, location, period):
         self.time_queue=deque()
         self.n_merge=int(n_merge)
         self.CO2_list=[]
@@ -40,7 +40,7 @@ class adc_DAQ(object):
         	reader = csv.reader(f)
         	for row in reader:
         		id_info.append(row)
-        filename = "/home/pi/data/"+"_".join(row)+"_CO2"+file_time+".csv"
+        filename = "/home/pi/data/"+"_".join(row)+"_CO2"+file_time+location+str(period)+".csv"
         f = open(filename, "ab+")
         adc_results=csv.writer(open(filename, "ab+"), delimiter = ",")
         metadata = []

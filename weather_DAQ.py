@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt
 from collections import deque
 
 class weather_DAQ(object):
-    def __init__(self, maxdata, n_merge):
+    def __init__(self, maxdata, n_merge, location, period):
         self.sensor = None
         self.running=False
         self.time_queue=deque()
@@ -48,7 +48,7 @@ class weather_DAQ(object):
             reader = csv.reader(f)
             for row in reader:
                 id_info.append(row)
-        filename = "/home/pi/data/"+"_".join(row)+"_weathe"+file_time+".csv"
+        filename = "/home/pi/data/"+"_".join(row)+"_weathe"+file_time+location+str(period)+".csv"
         results=csv.writer(open(filename, "ab+"), delimiter = ",")
         metadata=["Time", "Temp (C)","Temp SD","Pressure (hPa)", "Pressure SD","Humidity (%)","Humidity SD"]
         results.writerow(metadata)

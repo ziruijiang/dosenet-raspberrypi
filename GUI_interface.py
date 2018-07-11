@@ -219,17 +219,17 @@ def weather_test():
 
     if varCO2.get(): 
         global adcdaq
-        adcdaq = adc_DAQ.adc_DAQ(maxdata.get(), int(n_merge.get())*4)
+        adcdaq = adc_DAQ.adc_DAQ(maxdata.get(), int(n_merge.get())*4, location.get(), period.get())
         print("create CO2 file")
         adcdaq.create_file()
     if varAir.get(): 
         global aqdaq
-        aqdaq = air_quality_DAQ.air_quality_DAQ(maxdata.get(), int(n_merge.get()))
+        aqdaq = air_quality_DAQ.air_quality_DAQ(maxdata.get(), int(n_merge.get()), location.get(), period.get())
         print("create Air file")
         aqdaq.create_file()
     if varWeather.get(): 
         global wdaq
-        wdaq = weather_DAQ.weather_DAQ(maxdata.get(), int(n_merge.get()))
+        wdaq = weather_DAQ.weather_DAQ(maxdata.get(), int(n_merge.get()), location.get(), period.get())
         print("create weather file")
         wdaq.create_file()
     if vard3s.get():

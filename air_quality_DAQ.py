@@ -17,7 +17,7 @@ sys.stdout.flush()
 #sensor = entercodehere(morestuff) [Not sure if this is necessary] 
 
 class air_quality_DAQ(object):
-    def __init__ (self, maxdata, n_merge):
+    def __init__ (self, maxdata, n_merge, location, period):
         # self.sensor = sensor [Not sure if this is necessary]
         self.running = False
         self.time_queue = deque()
@@ -56,13 +56,13 @@ class air_quality_DAQ(object):
     def create_file(self):
         global results
         global f
-        file_time = time.strftime("%Y-%m-%d_%H-%M-%S", time.gmtime())
+        file_time = time.strftime("%Y-%m-%d", time.gmtime())
         id_info = []
         with open ('/home/pi/config/server_config.csv') as f:
             reader = csv.reader(f)
             for row in reader:
                 id_info.append(row)
-        filename =  "/home/pi/data/"+"_".join(row)+"_air_quality"+file_time+".csv"
+        filename =  "/home/pi/data/"+"_".join(row)+"_air_quality"+file_time+location+str(period)+".csv"
         f = open(filename, "ab+")
         results = csv.writer(open(filename, "ab+"), delimiter = ",")
         metadata = ["Time", "0.3 um", "0.5 um", "1.0 um", "2.5 um", "5.0 um", "10 um", "PM 1.0", "PM 2.5", "PM 10"]
