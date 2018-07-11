@@ -248,9 +248,13 @@ d3sButton = Tkinter.Checkbutton(top, text="D3S", variable=vard3s, font="Times 25
 # n_merge = Entry(top)
 maxdata_option = Tkinter.OptionMenu(top, maxdata, *option1)
 n_merge_option = Tkinter.OptionMenu(top, n_merge, *option2)
+period_option = Tkinter.OptionMenu(top, period, *option4)
+location_option = Tkinter.OptionMenu(top, location, *option3)
 
-maxdata_text = Label(top, text = "Data points on plot", font = "Times 20")
-nmerge_text = Label(top, text = 'Integration seconds (s)', font = "Times 20")
+maxdata_text = Label(top, text = "Data points on plot", font = "Times 18")
+nmerge_text = Label(top, text = 'Integration seconds (s)', font = "Times 18")
+period_text = Label(top, text = 'Period', font = "Times 18")
+location_text = Label(top, text = 'Location', font = "Times 18")
 RecordButton = Tkinter.Button(top, text="Record Data", command = weather_test, font="Times 25")
  
 AirButton.pack(pady = 3)  
