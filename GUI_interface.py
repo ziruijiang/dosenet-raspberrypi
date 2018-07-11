@@ -253,7 +253,7 @@ location_option = Tkinter.OptionMenu(top, location, *option3)
 
 maxdata_text = Label(top, text = "Data points on plot", font = "Times 20").grid(row=4, column = 1,columnspan = 2,pady = 3, padx=3,  sticky = Tkinter.E)
 nmerge_text = Label(top, text = 'Integration seconds (s)', font = "Times 20").grid(row=5, column = 1,columnspan = 2,pady = 3,padx=3, sticky = Tkinter.E)
-period_text = Label(top, text = 'Period', font = "Times 20").grid(row=6, column = 1,columnspan = 2,pady = 3, padx=3,sticky = Tkinter.E)
+period_text = Label(top, text = 'Class Period', font = "Times 20").grid(row=6, column = 1,columnspan = 2,pady = 3, padx=3,sticky = Tkinter.E)
 location_text = Label(top, text = 'Location', font = "Times 20").grid(row=7, column = 1,columnspan = 2,pady = 3, padx=3, sticky = Tkinter.E)
 RecordButton = Tkinter.Button(top, text="Record Data", command = weather_test, font="Times 20").grid(row=8, column = 3,pady=5)
  
