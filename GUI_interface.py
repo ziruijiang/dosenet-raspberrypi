@@ -38,7 +38,7 @@ option3 = ['Inside','Outside','Other']
 option4 = [0,1,2,3,4,5,6,7,8]
 
 top = Tkinter.Tk()
-top.geometry("400x240")
+top.geometry("400x280")
 varAir = Tkinter.BooleanVar()
 vard3s = Tkinter.BooleanVar()
 varCO2 = Tkinter.BooleanVar()
