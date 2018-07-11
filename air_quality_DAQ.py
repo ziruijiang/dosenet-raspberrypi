@@ -35,6 +35,8 @@ class air_quality_DAQ(object):
         self.P100_queue = deque()
         self.maxdata = int(maxdata)
         self.n_merge = int(n_merge)
+        self.location = location
+        self.period = str(period)
         self.PM01_list = []
         self.PM25_list = []
         self.PM10_list = []
@@ -62,7 +64,7 @@ class air_quality_DAQ(object):
             reader = csv.reader(f)
             for row in reader:
                 id_info.append(row)
-        filename =  "/home/pi/data/"+"_".join(row)+"_air_quality"+file_time+location+str(period)+".csv"
+        filename =  "/home/pi/data/"+"_".join(row)+"_air_quality"+file_time+self.location+self.period+".csv"
         f = open(filename, "ab+")
         results = csv.writer(open(filename, "ab+"), delimiter = ",")
         metadata = ["Time", "0.3 um", "0.5 um", "1.0 um", "2.5 um", "5.0 um", "10 um", "PM 1.0", "PM 2.5", "PM 10"]

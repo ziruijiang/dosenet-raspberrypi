@@ -22,6 +22,8 @@ class adc_DAQ(object):
         self.UV_list=[]
         self.time_list=[]
         self.maxdata=int(maxdata)
+        self.location = location
+        self.period = str(period)
         self.CO2_queue=deque()
         self.CO2_error=deque()
         self.UV_queue=deque()
@@ -40,7 +42,7 @@ class adc_DAQ(object):
         	reader = csv.reader(f)
         	for row in reader:
         		id_info.append(row)
-        filename = "/home/pi/data/"+"_".join(row)+"_CO2"+file_time+location+str(period)+".csv"
+        filename = "/home/pi/data/"+"_".join(row)+"_CO2"+file_time+self.location+self.period+".csv"
         f = open(filename, "ab+")
         adc_results=csv.writer(open(filename, "ab+"), delimiter = ",")
         metadata = []

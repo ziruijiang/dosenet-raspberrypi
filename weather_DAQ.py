@@ -28,6 +28,8 @@ class weather_DAQ(object):
         self.press_err=deque()
         self.maxdata=int(maxdata)
         self.n_merge=int(n_merge)
+        self.location = location
+        self.period = str(period)
         self.temp_list=[]
         self.humid_list=[]
         self.press_list=[]
@@ -48,7 +50,7 @@ class weather_DAQ(object):
             reader = csv.reader(f)
             for row in reader:
                 id_info.append(row)
-        filename = "/home/pi/data/"+"_".join(row)+"_weathe"+file_time+location+str(period)+".csv"
+        filename = "/home/pi/data/"+"_".join(row)+"_weathe"+file_time+self.location+self.period+".csv"
         results=csv.writer(open(filename, "ab+"), delimiter = ",")
         metadata=["Time", "Temp (C)","Temp SD","Pressure (hPa)", "Pressure SD","Humidity (%)","Humidity SD"]
         results.writerow(metadata)
