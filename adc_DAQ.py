@@ -175,27 +175,27 @@ class adc_DAQ(object):
         mean = np.mean(np.asarray(ydata))
         print("Display:{}+/-{}".format(mean,sd))
         if display <= 400:
-            p1.add_layout(Label(x = 70, y = 70, text = "CO2 Concentration: "+ str(display), text_font = 14, text_color = "lightgreen"))
+            p1.add_layout(Label(x = 70, y = 70, text = "CO2 Concentration: "+ str(display), text_font = "14", text_color = "lightgreen"))
             if sd<25:
             	p2.y_range = Range1d(mean-100,mean+100)
             else:
             	p2.y_range = Range1d(mean-4*sd,mean+4*sd)
 
         elif display > 400 and display <= 600:
-            p1.add_layout(Label(x = 70, y = 70, text = "CO2 Concentration: "+ str(display), text_font = 14, text_color = "yellow"))
+            p1.add_layout(Label(x = 70, y = 70, text = "CO2 Concentration: "+ str(display), text_font = "14", text_color = "yellow"))
             if sd<25:
             	p2.y_range = Range1d(mean-100,mean+100)
             else:
             	p2.y_range = Range1d(mean-4*sd,mean+4*sd)
         elif display > 600 and display <= 1000:
-            p1.add_layout(Label(x = 70, y = 70, text = "CO2 Concentration: "+ str(display), text_font = 14, text_color = "orange"))
+            p1.add_layout(Label(x = 70, y = 70, text = "CO2 Concentration: "+ str(display), text_font = "14", text_color = "orange"))
             if sd<25:
             	p2.y_range = Range1d(mean-100,mean+100)
             else:
             	p2.y_range = Range1d(mean-4*sd,mean+4*sd)
 
         elif display > 1000:
-            p1.add_layout(Label(x = 70, y = 70, text = "CO2 Concentration: "+ str(display), text_font = 14, text_color = "orange"))
+            p1.add_layout(Label(x = 70, y = 70, text = "CO2 Concentration: "+ str(display), text_font = "14", text_color = "red"))
             if sd<25:
             	p2.y_range = Range1d(mean-100,mean+100)
             else:
