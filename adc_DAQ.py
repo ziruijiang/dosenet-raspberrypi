@@ -12,7 +12,7 @@ import Adafruit_MCP3008
 from bokeh.plotting import figure
 from bokeh.io import show
 from bokeh.layouts import gridplot
-from bokeh.models import Range1d, DatetimeTickFormatter
+from bokeh.models import Range1d, DatetimeTickFormatter, Label
 from bokeh.models import Whisker, ColumnDataSource
 
 CLK  = 18
