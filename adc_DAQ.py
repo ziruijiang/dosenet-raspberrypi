@@ -163,115 +163,115 @@ class adc_DAQ(object):
 
     def update_plot(self,plot_id,xdata,ydata,yerr,xlabel,ylabel,title):
         
-        # create three plots
-        p1 = figure(plot_width=250, plot_height=250, title=None)
-        p1.axis.visible = False
-        p2 = figure(plot_width=250, plot_height=250, title=title)
+        # # create three plots
+        # p1 = figure(plot_width=250, plot_height=250, title=None)
+        # p1.axis.visible = False
+        # p2 = figure(plot_width=250, plot_height=250, title=title)
 
-        # make a grid
-        grid = gridplot([[p1],[p2]])
-        display = ydata[-1]
-        sd = np.std(np.asarray(ydata))
-        mean = np.mean(np.asarray(ydata))
-        print("Display:{}+/-{}".format(mean,sd))
-        if display <= 400:
-            p1.add_layout(Label(x = 70, y = 70, text = "CO2 Concentration: "+ str(display), text_font = "14", text_color = "lightgreen"))
-            if sd<25:
-            	p2.y_range = Range1d(mean-100,mean+100)
-            else:
-            	p2.y_range = Range1d(mean-4*sd,mean+4*sd)
-
-        elif display > 400 and display <= 600:
-            p1.add_layout(Label(x = 70, y = 70, text = "CO2 Concentration: "+ str(display), text_font = "14", text_color = "yellow"))
-            if sd<25:
-            	p2.y_range = Range1d(mean-100,mean+100)
-            else:
-            	p2.y_range = Range1d(mean-4*sd,mean+4*sd)
-        elif display > 600 and display <= 1000:
-            p1.add_layout(Label(x = 70, y = 70, text = "CO2 Concentration: "+ str(display), text_font = "14", text_color = "orange"))
-            if sd<25:
-            	p2.y_range = Range1d(mean-100,mean+100)
-            else:
-            	p2.y_range = Range1d(mean-4*sd,mean+4*sd)
-
-        elif display > 1000:
-            p1.add_layout(Label(x = 70, y = 70, text = "CO2 Concentration: "+ str(display), text_font = "14", text_color = "red"))
-            if sd<25:
-            	p2.y_range = Range1d(mean-100,mean+100)
-            else:
-            	p2.y_range = Range1d(mean-4*sd,mean+4*sd)
-
-        p2.line(xdata,ydata)
-        p2.xaxis.axis_label = xlabel
-        p2.yaxis.axis_label = ylabel
-        upper = [y+e for y,e in zip(ydata, yerr) ]
-        lower = [y-e for y,e in zip(ydata, yerr) ]
-        source = ColumnDataSource(data=dict(base = xdata, upper=upper, lower=lower))
-        p2.add_layout(Whisker(source=source, base="base", upper="upper", lower="lower"))
-
-        p2.xaxis.formatter = DatetimeTickFormatter(seconds=["%H:%M:%S"],
-                                            minutes=["%H:%M:%S"],
-                                            minsec=["%H:%M:%S"],
-                                            hours=["%H:%M:%S"])
-
-        p2.xaxis.major_label_orientation = np.pi/4
-        curdoc().add_root(grid)
-        curdoc().add_periodic_callback(update, 500)
-
-        # plt.ion()
-        # fig = plt.figure(plot_id,figsize=(800, 480))
-        # plt.clf()
-        # #ax=fig.add_subplot(111)
-
-
-        # gs = GridSpec(6,1)
-        # ax1 = fig.add_subplot(gs[0,:])
-        # ax2 = fig.add_subplot(gs[1:5,:])
-
-
-        # ax1.set_axis_off()
+        # # make a grid
+        # grid = gridplot([[p1],[p2]])
         # display = ydata[-1]
         # sd = np.std(np.asarray(ydata))
         # mean = np.mean(np.asarray(ydata))
         # print("Display:{}+/-{}".format(mean,sd))
         # if display <= 400:
-        #     ax1.text(0.5, 1.2,"CO2 Concentration: "+ str(display), fontsize = 14 , ha = "center", backgroundcolor = "lightgreen")
+        #     p1.add_layout(Label(x = 70, y = 70, text = "CO2 Concentration: "+ str(display), text_font = "14", text_color = "lightgreen"))
         #     if sd<25:
-        #     	ax2.set_ylim(mean-100,mean+100)
+        #     	p2.y_range = Range1d(mean-100,mean+100)
         #     else:
-        #     	ax2.set_ylim(mean-4*sd,mean+4*sd)
+        #     	p2.y_range = Range1d(mean-4*sd,mean+4*sd)
 
         # elif display > 400 and display <= 600:
-        #     ax1.text(0.5, 1.2,"CO2 Concentration: "+str(display), fontsize = 14, ha = "center", backgroundcolor = "yellow")
+        #     p1.add_layout(Label(x = 70, y = 70, text = "CO2 Concentration: "+ str(display), text_font = "14", text_color = "yellow"))
         #     if sd<25:
-        #     	ax2.set_ylim(mean-100,mean+100)
+        #     	p2.y_range = Range1d(mean-100,mean+100)
         #     else:
-        #     	ax2.set_ylim(mean-4*sd,mean+4*sd)
+        #     	p2.y_range = Range1d(mean-4*sd,mean+4*sd)
         # elif display > 600 and display <= 1000:
-        #     ax1.text(0.5, 1.2,"CO2 Concentration: "+str(display), fontsize = 14, ha = "center", backgroundcolor = "orange")
+        #     p1.add_layout(Label(x = 70, y = 70, text = "CO2 Concentration: "+ str(display), text_font = "14", text_color = "orange"))
         #     if sd<25:
-        #     	ax2.set_ylim(mean-100,mean+100)
+        #     	p2.y_range = Range1d(mean-100,mean+100)
         #     else:
-        #     	ax2.set_ylim(mean-4*sd,mean+4*sd)
+        #     	p2.y_range = Range1d(mean-4*sd,mean+4*sd)
 
         # elif display > 1000:
-        #     ax1.text(0.5, 1.2,"CO2 Concentration: "+str(display), fontsize = 14, ha = "center" , backgroundcolor = "red")
+        #     p1.add_layout(Label(x = 70, y = 70, text = "CO2 Concentration: "+ str(display), text_font = "14", text_color = "red"))
         #     if sd<25:
-        #     	ax2.set_ylim(mean-100,mean+100)
+        #     	p2.y_range = Range1d(mean-100,mean+100)
         #     else:
-        #     	ax2.set_ylim(mean-4*sd,mean+4*sd)
+        #     	p2.y_range = Range1d(mean-4*sd,mean+4*sd)
+
+        # p2.line(xdata,ydata)
+        # p2.xaxis.axis_label = xlabel
+        # p2.yaxis.axis_label = ylabel
+        # upper = [y+e for y,e in zip(ydata, yerr) ]
+        # lower = [y-e for y,e in zip(ydata, yerr) ]
+        # source = ColumnDataSource(data=dict(base = xdata, upper=upper, lower=lower))
+        # p2.add_layout(Whisker(source=source, base="base", upper="upper", lower="lower"))
+
+        # p2.xaxis.formatter = DatetimeTickFormatter(seconds=["%H:%M:%S"],
+        #                                     minutes=["%H:%M:%S"],
+        #                                     minsec=["%H:%M:%S"],
+        #                                     hours=["%H:%M:%S"])
+
+        # p2.xaxis.major_label_orientation = np.pi/4
+        # curdoc().add_root(grid)
+        # curdoc().add_periodic_callback(update, 500)
+
+        plt.ion()
+        fig = plt.figure(plot_id,figsize=(800, 480))
+        plt.clf()
+        #ax=fig.add_subplot(111)
+
+
+        gs = GridSpec(6,1)
+        ax1 = fig.add_subplot(gs[0,:])
+        ax2 = fig.add_subplot(gs[1:5,:])
+
+
+        ax1.set_axis_off()
+        display = ydata[-1]
+        sd = np.std(np.asarray(ydata))
+        mean = np.mean(np.asarray(ydata))
+        print("Display:{}+/-{}".format(mean,sd))
+        if display <= 400:
+            ax1.text(0.5, 1.2,"CO2 Concentration: "+ str(display), fontsize = 14 , ha = "center", backgroundcolor = "lightgreen")
+            if sd<25:
+            	ax2.set_ylim(mean-100,mean+100)
+            else:
+            	ax2.set_ylim(mean-4*sd,mean+4*sd)
+
+        elif display > 400 and display <= 600:
+            ax1.text(0.5, 1.2,"CO2 Concentration: "+str(display), fontsize = 14, ha = "center", backgroundcolor = "yellow")
+            if sd<25:
+            	ax2.set_ylim(mean-100,mean+100)
+            else:
+            	ax2.set_ylim(mean-4*sd,mean+4*sd)
+        elif display > 600 and display <= 1000:
+            ax1.text(0.5, 1.2,"CO2 Concentration: "+str(display), fontsize = 14, ha = "center", backgroundcolor = "orange")
+            if sd<25:
+            	ax2.set_ylim(mean-100,mean+100)
+            else:
+            	ax2.set_ylim(mean-4*sd,mean+4*sd)
+
+        elif display > 1000:
+            ax1.text(0.5, 1.2,"CO2 Concentration: "+str(display), fontsize = 14, ha = "center" , backgroundcolor = "red")
+            if sd<25:
+            	ax2.set_ylim(mean-100,mean+100)
+            else:
+            	ax2.set_ylim(mean-4*sd,mean+4*sd)
 
 
 
-        # ax2.set(xlabel = xlabel, ylabel = ylabel, title = title)
+        ax2.set(xlabel = xlabel, ylabel = ylabel, title = title)
 
-        # ax2.plot(xdata,ydata,"r.-")
-        # ax2.errorbar(xdata, ydata, yerr=yerr, fmt='o')
-        # #fig.autofmt_xdate()
-        # ax2.xaxis.set_major_formatter(DateFormatter('%H:%M:%S'))
-        # plt.setp(ax2.xaxis.get_majorticklabels(), rotation=45)
-        # fig.show()
-        # plt.pause(0.0005)    
+        ax2.plot(xdata,ydata,"r.-")
+        ax2.errorbar(xdata, ydata, yerr=yerr, fmt='o')
+        #fig.autofmt_xdate()
+        ax2.xaxis.set_major_formatter(DateFormatter('%H:%M:%S'))
+        plt.setp(ax2.xaxis.get_majorticklabels(), rotation=45)
+        fig.show()
+        plt.pause(0.0005)    
 
     def add_time(self, queue, timelist, data):
         timelist.append(data)
