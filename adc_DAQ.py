@@ -201,7 +201,7 @@ class adc_DAQ(object):
             else:
             	p2.y_range = Range1d(mean-4*sd,mean+4*sd)
 
-        p2.line(xdaya,ydata)
+        p2.line(xdata,ydata)
         p2.xaxis.axis_label = xlabel
         p2.yaxis.axis_label = ylabel
         upper = [y+e for y,e in zip(ydata, yerr) ]
