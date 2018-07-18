@@ -9,7 +9,7 @@ from collections import deque
 import Adafruit_GPIO.SPI as SPI
 import Adafruit_MCP3008
 
-from bokeh.plotting import figure
+from bokeh.plotting import figure, curdoc
 from bokeh.io import show
 from bokeh.layouts import gridplot
 from bokeh.models import Range1d, DatetimeTickFormatter, Label
@@ -215,7 +215,8 @@ class adc_DAQ(object):
                                             hours=["%H:%M:%S"])
 
         p2.xaxis.major_label_orientation = np.pi/4
-        show(grid)    
+        curdoc().add_root(grid)
+        curdoc().add_periodic_callback(update, 500
 
         # plt.ion()
         # fig = plt.figure(plot_id,figsize=(800, 480))
