@@ -216,7 +216,7 @@ class adc_DAQ(object):
 
         p2.xaxis.major_label_orientation = np.pi/4
         curdoc().add_root(grid)
-        curdoc().add_periodic_callback(update, 500
+        curdoc().add_periodic_callback(update, 500)
 
         # plt.ion()
         # fig = plt.figure(plot_id,figsize=(800, 480))
