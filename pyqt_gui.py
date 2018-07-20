@@ -1,0 +1,128 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'pyqt_gui.ui'
+#
+# Created by: PyQt5 UI code generator 5.6
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+class Ui_Dialog_1(object):
+    def setupUi(self, Dialog_1):
+        Dialog_1.setObjectName("Dialog_1")
+        Dialog_1.resize(400, 146)
+        self.pushButton = QtWidgets.QPushButton(Dialog_1)
+        self.pushButton.setGeometry(QtCore.QRect(10, 50, 112, 34))
+        self.pushButton.setObjectName("pushButton")
+        self.pushButton_2 = QtWidgets.QPushButton(Dialog_1)
+        self.pushButton_2.setGeometry(QtCore.QRect(140, 50, 112, 34))
+        self.pushButton_2.setObjectName("pushButton_2")
+        self.pushButton_3 = QtWidgets.QPushButton(Dialog_1)
+        self.pushButton_3.setGeometry(QtCore.QRect(271, 50, 121, 34))
+        self.pushButton_3.setObjectName("pushButton_3")
+
+        self.retranslateUi(Dialog_1)
+        QtCore.QMetaObject.connectSlotsByName(Dialog_1)
+
+    def retranslateUi(self, Dialog_1):
+        _translate = QtCore.QCoreApplication.translate
+        Dialog_1.setWindowTitle(_translate("Dialog_1", "Dialog"))
+        self.pushButton.setText(_translate("Dialog_1", "Start"))
+        self.pushButton_2.setText(_translate("Dialog_1", "Stop"))
+        self.pushButton_3.setText(_translate("Dialog_1", "Air Quality Plot"))
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(667, 588)
+        font = QtGui.QFont()
+        font.setFamily("Times New Roman")
+        font.setPointSize(12)
+        MainWindow.setFont(font)
+        MainWindow.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.CheckBox = QtWidgets.QCheckBox(self.centralwidget)
+        self.CheckBox.setGeometry(QtCore.QRect(260, 20, 151, 61))
+        self.CheckBox.setObjectName("CheckBox")
+        self.checkBox = QtWidgets.QCheckBox(self.centralwidget)
+        self.checkBox.setGeometry(QtCore.QRect(260, 90, 191, 23))
+        self.checkBox.setObjectName("checkBox")
+        self.checkBox_2 = QtWidgets.QCheckBox(self.centralwidget)
+        self.checkBox_2.setGeometry(QtCore.QRect(260, 140, 171, 23))
+        self.checkBox_2.setObjectName("checkBox_2")
+        self.checkBox_3 = QtWidgets.QCheckBox(self.centralwidget)
+        self.checkBox_3.setGeometry(QtCore.QRect(260, 190, 101, 23))
+        self.checkBox_3.setObjectName("checkBox_3")
+        self.maxdata = QtWidgets.QSpinBox(self.centralwidget)
+        self.maxdata.setGeometry(QtCore.QRect(380, 240, 45, 25))
+        self.maxdata.setMinimum(5)
+        self.maxdata.setMaximum(50)
+        self.maxdata.setSingleStep(5)
+        self.maxdata.setProperty("value", 20)
+        self.maxdata.setObjectName("maxdata")
+        self.label = QtWidgets.QLabel(self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(130, 230, 201, 31))
+        self.label.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.label.setFrameShadow(QtWidgets.QFrame.Plain)
+        self.label.setObjectName("label")
+        self.n_merge = QtWidgets.QSpinBox(self.centralwidget)
+        self.n_merge.setGeometry(QtCore.QRect(380, 300, 45, 25))
+        self.n_merge.setMinimum(3)
+        self.n_merge.setMaximum(300)
+        self.n_merge.setSingleStep(3)
+        self.n_merge.setProperty("value", 3)
+        self.n_merge.setObjectName("n_merge")
+        self.label_2 = QtWidgets.QLabel(self.centralwidget)
+        self.label_2.setGeometry(QtCore.QRect(130, 290, 221, 31))
+        self.label_2.setObjectName("label_2")
+        self.period_option = QtWidgets.QSpinBox(self.centralwidget)
+        self.period_option.setGeometry(QtCore.QRect(380, 350, 45, 25))
+        self.period_option.setMaximum(8)
+        self.period_option.setObjectName("period_option")
+        self.label_3 = QtWidgets.QLabel(self.centralwidget)
+        self.label_3.setGeometry(QtCore.QRect(130, 340, 151, 41))
+        self.label_3.setObjectName("label_3")
+        self.label_4 = QtWidgets.QLabel(self.centralwidget)
+        self.label_4.setGeometry(QtCore.QRect(130, 400, 101, 31))
+        self.label_4.setObjectName("label_4")
+        self.location_option = QtWidgets.QComboBox(self.centralwidget)
+        self.location_option.setGeometry(QtCore.QRect(380, 400, 92, 25))
+        self.location_option.setObjectName("location_option")
+        self.location_option.addItem("")
+        self.location_option.addItem("")
+        self.location_option.addItem("")
+        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton.setEnabled(True)
+        self.pushButton.setGeometry(QtCore.QRect(240, 450, 161, 41))
+        self.pushButton.setObjectName("pushButton")
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 667, 33))
+        self.menubar.setObjectName("menubar")
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
+
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.CheckBox.setText(_translate("MainWindow", "Air Quality"))
+        self.checkBox.setText(_translate("MainWindow", "Weather Sensor"))
+        self.checkBox_2.setText(_translate("MainWindow", "CO2 Sensor"))
+        self.checkBox_3.setText(_translate("MainWindow", "D3S"))
+        self.label.setText(_translate("MainWindow", "Data points on plot"))
+        self.label_2.setText(_translate("MainWindow", "Integration seconds (s)"))
+        self.label_3.setText(_translate("MainWindow", "Class period"))
+        self.label_4.setText(_translate("MainWindow", "Location"))
+        self.location_option.setCurrentText(_translate("MainWindow", "Inside"))
+        self.location_option.setItemText(0, _translate("MainWindow", "Inside"))
+        self.location_option.setItemText(1, _translate("MainWindow", "Outside"))
+        self.location_option.setItemText(2, _translate("MainWindow", "Other"))
+        self.pushButton.setText(_translate("MainWindow", "Record Data"))
+
